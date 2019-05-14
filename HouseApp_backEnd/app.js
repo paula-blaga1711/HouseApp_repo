@@ -3,14 +3,13 @@ global.app = express();
 app.disable('etag').disable('x-powered-by');
 const bodyParser = require('body-parser');
 
-
 var path = require('path');
 var createError = require('http-errors');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -21,6 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/resources', express.static(path.join(__dirname, '/resources')));
 
 require('./config/db');
+require('./routes/routes');
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -37,7 +37,7 @@ app.use(function (req, res, next) {
   });
   
   
-  app.listen(3500);
+  app.listen(5000);
 
 
 module.exports = app;
