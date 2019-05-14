@@ -41,4 +41,28 @@ router.get('/', jwtCheck, async (req, res) => {
     });
 });
 
+router.get('/myself', jwtCheck, async (req, res) => {
+  let loggedInUser = await getUserByAuth(req.user);
+  let roles = await Settings.getRoles();
+
+  if (loggedInUser && loggedInUser == null) {
+    return res.json({
+      status: 'error',
+      message: responseMessages['notLoggedIn']
+    });
+  }
+
+  if (loggedInUser && loggedInUser == 'notConfirmed') {
+    return res.json({
+      status: 'error',
+      message: responseMessages['notConfirmed']
+    });
+  }
+
+  return res.json({
+    status: 'success',
+    user: loggedInUser
+  });
+});
+
 module.exports = router;

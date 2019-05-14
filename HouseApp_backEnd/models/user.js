@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const Settings = require('./setting');
 
 const Admin_Schema = new Schema({
     name: String,
@@ -33,7 +34,7 @@ async function selectModel(role) {
     let model = null;
     if (roles != null) {
         if (role === roles[0]) model = admin
-        // else model = regular
+        else model = regular
     }
     return model;
 }
@@ -58,4 +59,26 @@ module.exports.getUserByAut0ID = function (auth0_ID) {
             console.log(err);
             return null;
         })
+}
+
+module.exports.getUsersByRole = async function (role) {
+    let model = await selectModel(role);
+    return model.find({
+        role: role
+    })
+        .exec()
+        .catch(err => {
+            console.log(err);
+            return null;
+        });
+}
+
+module.exports.getUserByRoleAndID = async function (role, userID) {
+    let model = await selectModel(role);
+    return model.findById(userID)
+        .exec()
+        .catch(err => {
+            console.log(err);
+            return null;
+        });
 }
