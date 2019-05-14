@@ -1,9 +1,44 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const mongoose = require('mongoose');
+const User = require('../models/user');
+const Settings = require('../models/setting');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+router.get('/', jwtCheck, async (req, res) => {
+  let loggedInUser = await getUserByAuth(req.user);
+  let roles = await Settings.getRoles();
+
+  if (loggedInUser && loggedInUser === null) {
+    return res.json({
+      status: 'error',
+      message: responseMessages['notLoggedIn']
+    });
+  }
+
+  if (loggedInUser && loggedInUser == 'notConfirmed') {
+    return res.json({
+      status: 'error',
+      message: responseMessages['notConfirmed']
+    });
+  }
+
+  if (roles && loggedInUser && loggedInUser.role !== roles[0])
+    return res.json({
+      status: 'error',
+      message: responseMessages['unauthorizedAccess']
+    });
+
+  let users = await User.getAllUsers();
+  if (!_.isEmpty(users))
+    return res.json({
+      status: 'success',
+      users: users
+    });
+  else
+    return res.json({
+      status: 'error',
+      message: responseMessages['generalError']
+    });
 });
 
 module.exports = router;

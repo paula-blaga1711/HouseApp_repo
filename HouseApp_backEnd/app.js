@@ -20,6 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/resources', express.static(path.join(__dirname, '/resources')));
 
 require('./config/db');
+require('./config/auth0');
 require('./routes/routes');
 
 // catch 404 and forward to error handler
