@@ -62,7 +62,7 @@ global.responseMessages = {
 global.userProfileImgUrl = '../api/resources/user_profile_img/';
 global.houseImgUrl = '../api/resources/house_img/';
 
-global.checkCounty = function (county) {
+module.exports.checkCounty = function (county) {
     counties = [
         'Alba',
         'Arad',
@@ -112,7 +112,7 @@ global.checkCounty = function (county) {
     else return false;
 }
 
-global.checkCity = function (county, city) {
+module.exports.checkCity = function (county, city) {
     //ToDo fill up AllCities by counties with real data
     let AllCities = {
         'Alba': ['Alba Iulia', 'Sebes', 'Aiud', 'Cugir', 'Blaj', 'Ocna Mures', 'Zlatna', 'Campeni', 'Teius', 'Abrud', 'Baia de Aries'],
@@ -164,7 +164,7 @@ global.checkCity = function (county, city) {
     return false
 }
 
-global.checkMongooseID = function (mongooseID) {
+module.exports.checkMongooseID = function (mongooseID) {
     if (!mongoose.Types.ObjectId.isValid(mongooseID))
         return false;
     return true;

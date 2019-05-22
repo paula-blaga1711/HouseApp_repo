@@ -1,17 +1,21 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const Tag = require('./tag');
 
 const Settings_Schema = new Schema({
     roles: [String],
     genders: [String],
-    tags: [String]
+    tags: [{
+        type: Schema.Types.ObjectId,
+        ref: 'tag'
+    }]
 });
 
 const Settings = module.exports = mongoose.model('setting', Settings_Schema);
 
 async function GetSettings() {
     return Settings.findOne({})
-        //.populate('categories')
+        .populate('tags')
         .exec();
 }
 
