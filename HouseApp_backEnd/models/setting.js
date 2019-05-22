@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+mongoose.set('useFindAndModify', false);
 const Schema = mongoose.Schema;
 const Tag = require('./tag');
 
@@ -135,4 +136,15 @@ module.exports.getTagByIndex = function (index) {
             console.log(err);
             return null;
         });
+}
+
+module.exports.insertSettingTag = function (tagID) {
+    try {
+        return Settings.findByIdAndUpdate('5cdaeb9a2b14ae4944fae5a3', {
+            $push: { tags: tagID }
+        })
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
 }

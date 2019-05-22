@@ -30,3 +30,21 @@ module.exports.getTagByID = function (tagID) {
             return null;
         });
 };
+
+module.exports.createTag = function (fields) {
+
+    const newTag = new Tag({
+        text: fields.text
+    });
+
+    return newTag.save()
+        .then(result => {
+            return {
+                result: result
+            }
+        })
+        .catch(err => {
+            console.log("There's been an error: ", err);
+            return null;
+        });
+};
