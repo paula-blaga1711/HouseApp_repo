@@ -1,10 +1,13 @@
 const mongoose = require('mongoose');
 module.exports = {
-    database: 'mongodb+srv://cluster0-gn9a4.mongodb.net',
+    //database: 'mongodb+srv://cluster0-gn9a4.mongodb.net',
+    database: 'mongodb://165.22.204.15:27021',
     databaseConfig: {
         useNewUrlParser: true,
-        user: "adminPaula",
-        pass: "szoszke007",
+        // user: "adminPaula",
+        // pass: "szoszke007",
+        user: "paula",
+        pass: "damian1155!",
         dbName: 'HouseApp'
     }
 };

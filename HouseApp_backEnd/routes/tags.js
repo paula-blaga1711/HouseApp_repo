@@ -111,4 +111,8 @@ router.post('/', jwtCheck, async (req, res) => {
     }
 });
 
+//To do: implement update -> if admin or if own house
+
+//To do: implement delete -> if admin or if own house
+
 module.exports = router;

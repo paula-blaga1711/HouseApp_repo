@@ -148,3 +148,5 @@ module.exports.insertSettingTag = function (tagID) {
         return null;
     }
 }
+
+//To do: implement remove tag from settings
