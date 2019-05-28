@@ -111,8 +111,67 @@ router.post('/', jwtCheck, async (req, res) => {
     }
 });
 
-//To do: implement update -> if admin or if own house
+router.put('/:id', jwtCheck, async (req, res) => {
+    let loggedInUser = await getUserByAuth(req.user);
+    let roles = await Setting.getRoles();
 
-//To do: implement delete -> if admin or if own house
+    if (!config.checkMongooseID(req.params.id))
+        return res.json({
+            status: 'error',
+            message: responseMessages['wrongData']
+        });
+
+    if (loggedInUser && loggedInUser === null) {
+        return res.json({
+            status: 'error',
+            message: responseMessages['notLoggedIn']
+        });
+    }
+
+    if (loggedInUser && loggedInUser == 'notConfirmed') {
+        return res.json({
+            status: 'error',
+            message: responseMessages['notConfirmed']
+        });
+    }
+
+    if (roles && loggedInUser && loggedInUser.role !== roles[0])
+        return res.json({
+            status: 'error',
+            message: responseMessages['unauthorizedAccess']
+        });
+
+    if (!req.body)
+        return res.json({
+            status: 'error',
+            message: responseMessages['notEnoughData']
+        });
+
+    let fields = req.body
+    if (await checkTagFields(fields) === false)
+        return res.json({
+            status: 'error',
+            message: responseMessages['notEnoughData']
+        });
+
+    if (await checkTagFieldsContent(fields) === false)
+        return res.json({
+            status: 'error',
+            message: responseMessages['wrongData']
+        });
+
+    let updateTag = await Tag.updateTag(req.params.id, { text: req.body.text });
+
+    if (updateTag && !_.isEmpty(updateTag)) {
+        return res.json({
+            status: 'success',
+            message: responseMessages['success']
+        });
+    } else
+        return res.json({
+            status: 'error',
+            message: responseMessages['generalError']
+        });
+});
 
 module.exports = router;

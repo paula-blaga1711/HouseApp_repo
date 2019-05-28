@@ -48,3 +48,12 @@ module.exports.createTag = function (fields) {
             return null;
         });
 };
+
+module.exports.updateTag = function (tagID, fields) {
+    return Tag.updateOne({ _id: tagID }, { $set: fields })
+        .catch(err => {
+            console.log("There's been an error: ", err);
+            return null;
+        });
+};
+
