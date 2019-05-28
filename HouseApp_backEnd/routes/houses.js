@@ -312,7 +312,7 @@ router.post('/', jwtCheck, async (req, res) => {
                 }
             })
         }
-       
+
         if (!_.has(fields, 'newTags')) {
 
             fields = Object.assign(fields, { tags: tags });
@@ -330,6 +330,125 @@ router.post('/', jwtCheck, async (req, res) => {
                 });
         }
     })
+});
+
+router.put('/:id', jwtCheck, async (req, res) => {
+    upload.single('houseimg')(req, res, async function (err) {
+        if (err instanceof multer.MulterError) {
+            console.log('multer error', err.message);
+            return res.json({
+                status: "error",
+                message: responseMessages['wrongFile']
+            });
+
+        } else if (err) {
+            return res.json({
+                status: "error",
+                message: err.message
+            });
+        }
+
+        let loggedInUser = await getUserByAuth(req.user);
+        let roles = await Settings.getRoles();
+
+        if (!config.checkMongooseID(req.params.id))
+            return res.json({
+                status: 'error',
+                message: responseMessages['wrongData']
+            });
+
+        if (loggedInUser && loggedInUser === null) {
+            return res.json({
+                status: 'error',
+                message: responseMessages['notLoggedIn']
+            });
+        }
+
+        if (loggedInUser && loggedInUser == 'notConfirmed') {
+            return res.json({
+                status: 'error',
+                message: responseMessages['notConfirmed']
+            });
+        }
+
+        if (roles && loggedInUser && loggedInUser.role !== roles[0] && !_.includes(loggedInUser.houses, req.params.id))
+            return res.json({
+                status: 'error',
+                message: responseMessages['unauthorizedAccess']
+            });
+
+        let fields = req.body;
+        if (req.file) {
+            fields = Object.assign(fields, {
+                image: req.file.filename
+            });
+        }
+
+        let houseFieldsCheck = await checkHouseFields(fields);
+        let houseFieldContentCheck = await checkHouseFieldsContent(fields);
+
+        if (houseFieldsCheck === false)
+            return res.json({
+                status: 'error',
+                message: responseMessages['notEnoughData']
+            });
+
+        if (houseFieldContentCheck === false)
+            return res.json({
+                status: 'error',
+                message: responseMessages['wrongData']
+            });
+
+        let tags = [];
+        if (_.has(fields, 'oldTags')) tags = fields.oldTags;
+
+        counter = 0;
+        if (_.has(fields, 'newTags')) {
+            _.forEach(fields.newTags, async function (newTagText) {
+                let newTag = await Tag.createTag({ text: newTagText });
+                if (newTag && newTag != null) {
+                    let newTagDocument = await Tag.getTagByText(newTagText);
+                    if (newTagDocument && newTagDocument != null) {
+                        let insertToSetting = await Settings.insertSettingTag(newTagDocument._id);
+                        if (insertToSetting && insertToSetting != null) {
+                            tags.push(newTagDocument._id);
+                            counter++;
+                            if (counter == fields.newTags.length) {
+                                fields = Object.assign(fields, { tags: tags });
+                                let updatedHouse = await House.updateHouse(req.params.id, fields);
+                                if (!_.isEmpty(updatedHouse))
+                                    return res.json({
+                                        status: "success",
+                                        message: responseMessages['success']
+                                    });
+                                else
+                                    return res.json({
+                                        status: "error",
+                                        message: responseMessages['generalError']
+                                    });
+                            }
+                        }
+                    }
+                }
+            })
+        }
+
+        if (!_.has(fields, 'newTags')) {
+            fields = Object.assign(fields, { tags: tags });
+            let updatedHouse = await House.updateHouse(req.params.id, fields);
+            if (!_.isEmpty(updatedHouse))
+                return res.json({
+                    status: "success",
+                    message: responseMessages['success']
+                });
+            else
+                return res.json({
+                    status: "error",
+                    message: responseMessages['generalError']
+                });
+        }
+
+    });
 });
 
 router.delete('/:id', jwtCheck, async (req, res) => {

@@ -12,7 +12,7 @@ const House_Schema = new Schema({
         type: String,
         required: true
     },
-    image:{
+    image: {
         type: String,
         default: null
     },
@@ -169,6 +169,14 @@ module.exports.createHouse = function (fields) {
                 result: result
             }
         })
+        .catch(err => {
+            console.log("There's been an error: ", err);
+            return null;
+        });
+};
+
+module.exports.updateHouse = function (houseID, fields) {
+    return House.updateOne({ _id: houseID }, { $set: fields })
         .catch(err => {
             console.log("There's been an error: ", err);
             return null;
