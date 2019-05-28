@@ -108,3 +108,18 @@ module.exports.getHousesByCounty = function (county) {
             return null;
         });
 };
+
+module.exports.getHousesByText = function (text) {
+    var findText = new RegExp(text, 'i');
+    return House.find({
+        $or: [
+            { title: { $regex: findText } },
+            { content: { $regex: findText } }
+        ]
+    })
+        .exec()
+        .catch(err => {
+            console.log("There's been an error: ", err);
+            return null;
+        });
+}

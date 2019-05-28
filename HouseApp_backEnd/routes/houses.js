@@ -16,6 +16,7 @@ router.get('/', async (req, res) => {
     let filteredHousesByCounty = [];
     let filteredHousesByTags = [];
     let filteredHousesByPrice = [];
+    let filteredHousesByText = [];
     let resultHouses = [];
 
     if (_.size(req.query) == 0) {
@@ -86,10 +87,15 @@ router.get('/', async (req, res) => {
             });
     }
 
+    if(req.query.text){
+        filteredHousesByText = await House.getHousesByText(req.query.text);
+    }
+
     if (_.size(req.query) == 1) {
         if (req.query.tagIDs) resultHouses = filteredHousesByTags;
         if (req.query.prices) resultHouses = filteredHousesByPrice;
         if (req.query.county) resultHouses = filteredHousesByCounty;
+        if (req.query.text) resultHouses = filteredHousesByText;
     }
 
     if (_.size(req.query) > 1) {
@@ -97,6 +103,7 @@ router.get('/', async (req, res) => {
         if (req.query.tagIDs) resultsToIntersect.push(filteredHousesByTags);
         if (req.query.prices) resultsToIntersect.push(filteredHousesByPrice);
         if (req.query.county) resultsToIntersect.push(filteredHousesByCounty);
+        if (req.query.text) resultsToIntersect.push(filteredHousesByText);
 
         resultHouses = resultsToIntersect[0];
         _.forEach(resultsToIntersect, function (filteredHouseList) {
