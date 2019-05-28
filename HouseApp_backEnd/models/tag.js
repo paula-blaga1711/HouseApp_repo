@@ -31,6 +31,15 @@ module.exports.getTagByID = function (tagID) {
         });
 };
 
+module.exports.getTagByText = function (text) {
+    return Tag.findOne({text: text})
+        .exec()
+        .catch(err => {
+            console.log(err);
+            return null;
+        });
+};
+
 module.exports.createTag = function (fields) {
 
     const newTag = new Tag({

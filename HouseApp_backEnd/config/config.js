@@ -62,8 +62,8 @@ global.responseMessages = {
     //#endregion
 };
 
-global.userProfileImgUrl = '../api/resources/user_profile_img/';
-global.houseImgUrl = '../api/resources/house_img/';
+global.userProfileImgUrl = '../resources/user_profile_img/';
+global.houseImgUrl = '../resources/house_img/';
 
 module.exports.checkCounty = function (county) {
     counties = [

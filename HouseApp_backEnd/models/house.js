@@ -4,14 +4,38 @@ const User = require('./user');
 const Tag = require('./tag');
 
 const House_Schema = new Schema({
-    title: String,
-    content: String,
-    image: String,
-    surface: Number,
-    price: Number,
-    date: Date,
-    county: String,
-    city: String,
+    title: {
+        type: String,
+        required: true
+    },
+    content: {
+        type: String,
+        required: true
+    },
+    image:{
+        type: String,
+        default: null
+    },
+    surface: {
+        type: Number,
+        required: true
+    },
+    price: {
+        type: Number,
+        required: true
+    },
+    date: {
+        type: Date,
+        default: Date.now()
+    },
+    county: {
+        type: String,
+        required: true
+    },
+    city: {
+        type: String,
+        required: true
+    },
     owner: {
         type: Schema.Types.ObjectId,
         ref: 'regular'
@@ -122,4 +146,42 @@ module.exports.getHousesByText = function (text) {
             console.log("There's been an error: ", err);
             return null;
         });
+}
+
+module.exports.createHouse = function (fields) {
+
+    const newHouse = new House({
+        title: fields.title,
+        content: fields.content,
+        image: fields.image,
+        surface: fields.surface,
+        price: fields.price,
+        date: Date.now(),
+        county: fields.county,
+        city: fields.city,
+        owner: fields.owner,
+        tags: fields.tags
+    });
+
+    return newHouse.save()
+        .then(result => {
+            return {
+                result: result
+            }
+        })
+        .catch(err => {
+            console.log("There's been an error: ", err);
+            return null;
+        });
+};
+
+module.exports.deleteHouse = function (houseID) {
+    return House.deleteOne({ _id: houseID })
+        .then(result => {
+            return true;
+        })
+        .catch(err => {
+            console.log(err);
+            return false;
+        })
 }
