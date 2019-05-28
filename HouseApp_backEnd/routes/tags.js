@@ -91,7 +91,6 @@ router.post('/', jwtCheck, async (req, res) => {
     let newTag = await Tag.createTag({ text: req.body.text });
 
     if (newTag && newTag != null) {
-
         let insertToSetting = null;
         setTimeout(async function () {
             let latestTag = await Tag.Tags.findOne().sort({ _id: -1 });
