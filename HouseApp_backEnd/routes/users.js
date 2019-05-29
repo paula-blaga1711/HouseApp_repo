@@ -15,6 +15,30 @@ async function deleteUserFromAuth0(user) {
   return true;
 }
 
+async function checkUserFields(fields) {
+  if (_.isEmpty(fields)) return false;
+  if (!(_.has(fields, 'name'))) return false;
+  if (!(_.has(fields, 'gender'))) return false;
+  if (!(_.has(fields, 'email'))) return false;
+  if (!(_.has(fields, 'password'))) return false;
+  return true
+}
+
+async function checkUserFieldsContent(fields) {
+  let genders = await Settings.getGenders();
+  if (fields.name.length < 3) return false;
+  if (genders && !_.includes(genders, fields.gender)) return false;
+  if (fields.password.length < 6) return false;
+  if (await checkEmailExistence(fields.email) === false) return false;
+  return true
+}
+
+async function checkEmailExistence(email) {
+  DBuser = await User.getUserByEmail(email);
+  if (DBuser && DBuser.length == 0) return true;
+  return false;
+}
+
 router.get('/', jwtCheck, async (req, res) => {
   let loggedInUser = await getUserByAuth(req.user);
   let roles = await Settings.getRoles();
@@ -172,6 +196,46 @@ router.put('/delete/:id', jwtCheck, async (req, res) => {
       status: 'error',
       message: responseMessages['generalError']
     });
-})
+});
+
+router.post('/', async (req, res) => {
+  let fields = req.body;
+  let userFieldCheck = await checkUserFields(fields);
+  let userFieldContentCheck = await checkUserFieldsContent(fields);
+
+  if (userFieldCheck === false)
+    return res.json({
+      status: 'error',
+      message: responseMessages['notEnoughData']
+    });
+
+  if (userFieldContentCheck === false)
+    return res.json({
+      status: 'error',
+      message: responseMessages['wrongData']
+    });
+
+  let auth0ID = await signUpToAuth0(fields.email, fields.password);
+  if (auth0ID && auth0ID != null) {
+    fields = Object.assign(fields, { auth0_id: auth0ID })
+  } else {
+    return res.json({
+      status: 'error',
+      message: responseMessages['generalError']
+    });
+  }
+
+  let newRegular = await User.createRegular(fields);
+  if (newRegular && !_.isEmpty(newRegular))
+    return res.json({
+      status: "success",
+      message: responseMessages['success']
+    });
+  else
+    return res.json({
+      status: "error",
+      message: responseMessages['generalError']
+    });
+});
 
 module.exports = router;

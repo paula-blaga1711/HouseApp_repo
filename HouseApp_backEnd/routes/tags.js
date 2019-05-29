@@ -7,7 +7,6 @@ const config = require('../config/config');
 async function checkTagFields(fields) {
     if (_.isEmpty(fields)) return false;
     if (!(_.has(fields, 'text'))) return false;
-    if (fields.text.length < 3) return false;
     return true
 }
 

@@ -83,6 +83,16 @@ module.exports.getUserByRoleAndID = async function (role, userID) {
         });
 }
 
+module.exports.getUserByEmail = function (email) {
+    return admin.find({ email: email })
+        .exec()
+        .then(users => { return users[0] || [] })
+        .catch(err => {
+            console.log(err);
+            return null;
+        });
+}
+
 module.exports.updateUserById = async function (userID, role, fields) {
     let model = await selectModel(role);
     return model.findOneAndUpdate({ _id: userID }, { $set: fields })
@@ -91,3 +101,23 @@ module.exports.updateUserById = async function (userID, role, fields) {
             return null;
         });
 }
+
+module.exports.createRegular = function (fields) {
+    const newUser = new regular({
+        name: fields.name,
+        auth0_id: fields.auth0_id,
+        role: 'regular',
+        email: fields.email,
+        gender: fields.gender
+    });
+    return newUser.save()
+        .then(result => {
+            return {
+                result: result
+            }
+        })
+        .catch(err => {
+            console.log("There's been an error: ", err);
+            return null;
+        });
+};

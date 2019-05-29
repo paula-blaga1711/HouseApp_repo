@@ -62,7 +62,7 @@ global.GetAuth0Token = function () {
             } else {
                 let receivedBodyObject = JSON.parse(body);
                 auth0Token = receivedBodyObject.access_token;
-                
+
                 resolve(auth0Token);
                 return auth0Token;
             }
@@ -72,32 +72,47 @@ global.GetAuth0Token = function () {
 
 global.DeleteAuth0User = function (userID, token) {
     return new Promise(resolve => {
-      request({
-        method: 'DELETE',
-        url: `https://houseapp.eu.auth0.com/api/v2/users/${userID}`,
-        headers: { 'Authorization': `Bearer ${token}` },
-      }, function (error, response, body) {
-        if (error) {
-          console.log(error);
-          resolve(null);
-          return null;
-        } else {
-          status = response.statusCode;
-          resolve(status);
-          return status;
-        }
-      });
+        request({
+            method: 'DELETE',
+            url: `https://houseapp.eu.auth0.com/api/v2/users/${userID}`,
+            headers: { 'Authorization': `Bearer ${token}` },
+        }, function (error, response, body) {
+            if (error) {
+                console.log(error);
+                resolve(null);
+                return null;
+            } else {
+                status = response.statusCode;
+                resolve(status);
+                return status;
+            }
+        });
     });
-  }
+}
 
-global.signUpToAuth0 = function (userEmail) {
+var optionsCreateUser = {
+    method: 'POST',
+    url: 'https://houseapp.eu.auth0.com/dbconnections/signup',
+    headers: { 'content-type': 'application/json' },
+    body:
+    {
+        client_id: 'MDjkXRnBL4HJiVumH41IQm2RvTkBI7jX',
+        email: '',
+        password: '',
+        connection: 'Username-Password-Authentication',
+        user_metadata: { name: '' }
+    },
+    json: true
+};
+
+global.signUpToAuth0 = function (userEmail, userPassword) {
     let authID = null;
-    options.body.email = userEmail;
-    options.body.password = 'Temp123!'; //replace hardcoded value with a randomly generated one
-    options.body.user_metadata.name = userEmail;
+    optionsCreateUser.body.email = userEmail;
+    optionsCreateUser.body.password = userPassword;
+    optionsCreateUser.body.user_metadata.name = userEmail;
 
     return new Promise(resolve => {
-        request(options, function (error, response, body) {
+        request(optionsCreateUser, function (error, response, body) {
             if (error) {
                 console.log(error);
                 resolve(null);
