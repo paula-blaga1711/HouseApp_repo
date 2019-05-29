@@ -76,6 +76,46 @@ router.get('/myself', jwtCheck, async (req, res) => {
   });
 });
 
+router.get('/:id', jwtCheck, async (req, res) => {
+  let loggedInUser = await getUserByAuth(req.user);
+  let roles = await Settings.getRoles();
+
+  if (loggedInUser && loggedInUser === null) {
+    return res.json({
+      status: 'error',
+      message: responseMessages['notLoggedIn']
+    });
+  }
+
+  if (loggedInUser && loggedInUser == 'notConfirmed') {
+    return res.json({
+      status: 'error',
+      message: responseMessages['notConfirmed']
+    });
+  }
+
+  if (!config.checkMongooseID(req.params.id))
+    return res.json({
+      status: 'error',
+      message: responseMessages['wrongData']
+    });
+
+  let querriedUser = await User.getUserByRoleAndID('admin', req.params.id);
+  if (querriedUser && !_.isEmpty(querriedUser) && querriedUser.role !== roles[0])
+    querriedUser = await User.getUserByRoleAndID(querriedUser.role, req.params.id);
+
+  if (loggedInUser.role === roles[0] || loggedInUser._id.equals(querriedUser._id)) {
+    return res.json({
+      status: 'success',
+      user: querriedUser
+    });
+  } else
+    return res.json({
+      status: 'error',
+      message: responseMessages['unauthorizedAccess']
+    });
+});
+
 router.put('/delete/:id', jwtCheck, async (req, res) => {
   let loggedInUser = await getUserByAuth(req.user);
   let roles = await Settings.getRoles();
