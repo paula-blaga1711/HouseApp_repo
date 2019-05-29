@@ -82,3 +82,12 @@ module.exports.getUserByRoleAndID = async function (role, userID) {
             return null;
         });
 }
+
+module.exports.updateUserById = async function (userID, role, fields) {
+    let model = await selectModel(role);
+    return model.findOneAndUpdate({ _id: userID }, { $set: fields })
+        .catch(err => {
+            console.log("There's been an error: ", err);
+            return null;
+        });
+}
