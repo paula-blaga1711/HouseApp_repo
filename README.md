@@ -8,6 +8,9 @@ usefull guides (for remote server):
 - nodeJS on ubuntu 16.04: https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04
 - pm2: https://www.npmjs.com/package/pm2
 - mongoDB on ubuntu 16.04: https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-mongodb-on-ubuntu-16-04
+- putty: https://www.putty.org/
+- fileZilla for win10: https://filezilla-project.org/download.php?platform=win64
+
 
 
 usefull links / tools (for local development environment):
@@ -16,5 +19,3 @@ usefull links / tools (for local development environment):
   - nodemon: https://github.com/remy/nodemon
   - mongoDB compass: https://docs.mongodb.com/compass/master/install/
   - editor: https://code.visualstudio.com/docs/setup/windows  + helper features/ tips for VSCode: https://medium.com/@bretcameron/7-essential-features-of-visual-studio-code-for-web-developers-be77e235bf62
-
-
