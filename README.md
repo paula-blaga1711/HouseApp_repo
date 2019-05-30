@@ -19,3 +19,4 @@ usefull links / tools (for local development environment):
   - nodemon: https://github.com/remy/nodemon
   - mongoDB compass: https://docs.mongodb.com/compass/master/install/
   - editor: https://code.visualstudio.com/docs/setup/windows  + helper features/ tips for VSCode: https://medium.com/@bretcameron/7-essential-features-of-visual-studio-code-for-web-developers-be77e235bf62
+  
