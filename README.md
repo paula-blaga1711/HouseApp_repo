@@ -1,5 +1,5 @@
 # HouseApp_repo
-homework
+homework project
 
 usefull guides (for remote server):
 - create droplet to host server: https://m.do.co/c/e02e8529e179
@@ -9,7 +9,8 @@ usefull guides (for remote server):
 - pm2: https://www.npmjs.com/package/pm2
 - mongoDB on ubuntu 16.04: https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-mongodb-on-ubuntu-16-04
 
-usefull links / tools (local development environment):
+
+usefull links / tools (for local development environment):
   - npm: https://www.npmjs.com/get-npm 
   - nodeJS: https://nodejs.org/en/download/
   - nodemon: https://github.com/remy/nodemon
