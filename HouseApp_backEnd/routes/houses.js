@@ -212,11 +212,14 @@ router.get('/:id', async (req, res) => {
         });
 
     let house = await House.getHouseByID(req.params.id);
-    if (!_.isEmpty(house))
+    if (!_.isEmpty(house)) {
+        if (!_.isEmpty(house.image))
+            house['image'] = houseImgUrl + house['image'];
         return res.json({
             status: 'success',
             house: house
         });
+    }
     else
         return res.json({
             status: 'error',
