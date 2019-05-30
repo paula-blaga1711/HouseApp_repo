@@ -1,5 +1,5 @@
 # HouseApp_repo
-homework project
+homework project: basic MEAN application
 
 usefull guides (for remote server):
 - create droplet to host server: https://m.do.co/c/e02e8529e179
