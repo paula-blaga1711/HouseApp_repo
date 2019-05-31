@@ -1,0 +1,14 @@
+nav{
+    background-color:#555;
+}
+
+li:hover {
+
+    border-radius:5px;
+    border-bottom:3px solid #28a745;
+}
+
+
+button:hover{
+    background-color:rgb(32, 192, 123);
+}

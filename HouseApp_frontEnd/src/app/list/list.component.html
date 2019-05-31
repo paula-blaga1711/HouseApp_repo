@@ -1,0 +1,35 @@
+<body>
+
+  <div class="ecran">
+    <h2 style="margin-left:50px;margin-top:20px;">House Gallery</h2>
+
+    <div class="row justify-content-center">
+
+      <div class="col-6" *ngFor="let house of houses.value">
+        <mat-card class="example-card" (click)="openHouseDetail(house)">
+          <img mat-card-image src="">
+          <mat-card-content>
+            <p style="text-align:center">
+              {{house.title}}
+            </p>
+            <div style="text-align:center">
+              <img src="{{getImageFromHouses(house)}}" onerror="this.style.display='none'"
+                style="margin-top:10px;width:300px;height:auto;background-size:cover;background-position:center;text-align:center">
+            </div>
+
+            <h5 style="margin-top:10px;text-align:center">Since {{house.date | date : 'dd MMM. yyyy '}} </h5>
+          </mat-card-content>
+          <mat-card-actions>
+            <button type="button" class="btn btn-success">View</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+
+
+
+    </div>
+
+
+  </div>
+
+</body>

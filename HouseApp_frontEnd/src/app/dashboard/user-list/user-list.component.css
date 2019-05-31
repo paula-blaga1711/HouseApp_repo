@@ -1,0 +1,13 @@
+.btn-primary{
+    background:#343a40 ;
+    border:none;
+    margin-top:10px;
+ }
+
+ .btn-primary:hover{
+    background:rgb(32, 192, 123);
+ }
+
+ .btn{
+     margin:5px;
+ }

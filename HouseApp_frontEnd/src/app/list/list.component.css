@@ -1,0 +1,45 @@
+nav{
+    position:fixed;
+}
+
+
+
+.example-card {
+
+    border-color:#999;
+    max-width: 370px;
+    margin-right:10px;
+    margin:10px;
+  }
+
+  mat-card{
+      cursor:pointer;
+  }
+  
+
+  button{
+    float:center;
+  }
+
+  mat-card{
+      border:1px solid #999;
+  }
+  mat-card:hover{
+    border:2px solid;
+
+  }
+
+  button{
+      margin-left:140px;
+  }
+
+  p{
+      font-size:17px;
+      font-weight: 700;
+  }
+
+  .price{
+      font-size:19px;
+      margin-left:160px;
+  }
+

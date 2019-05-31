@@ -1,0 +1,106 @@
+<div class="container" style="margin-top:20px">
+
+  <div class="row">
+    <div class="col">
+      <div class="page-title"
+        style="font-size:35px;font-family: 'Open Sans', sans-serif;font-weight: 600;color:#052a30;">Create house</div>
+
+    </div>
+
+  </div>
+  <hr style="background-color: black ">
+  <a style="box-shadow: 2px 3px 6px  rgba(0,0,0,0.16);" class="previous" routerLink="/dashboard/house-list">&laquo;
+    Back to house list</a>
+
+
+  <div class="row" style="margin-top:20px">
+
+    <div class="col-4">
+      <div class="form-group">
+        <label for="exampleInputPassword1">*Title:</label>
+        <input type="text" class="form-control" [(ngModel)]="this.create_house.title">
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="form-group">
+        <label for="exampleInputPassword1">*Price:</label>
+        <input type="text" class="form-control" [(ngModel)]="this.create_house.price">
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="form-group">
+        <label for="exampleInputPassword1">*Surface (m<sup>2</sup>):</label>
+        <input type="text" class="form-control" [(ngModel)]="this.create_house.surface">
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <div class="form-group">
+        <label>*County:</label><!-- in select[(ngModel)]="createForm.office_county" -->
+        <select class="form-control" (change)="onSelect($event.target.value)" [(ngModel)]="this.create_house.county">
+          <option *ngFor="let country of countries" value={{country.id}}>{{country.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="form-group">
+        <label>*City:</label><!-- [(ngModel)]="createForm.office_city" -->
+        <select class="form-control" [(ngModel)]="this.create_house.city">
+          <option value="1">--Choose city--</option>
+          <option *ngFor="let state of states " value={{state.name}}>{{state.name}}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- <div class="col-4">
+      <div class="form-group">
+        <label>*Tag:</label>
+        <select class="form-control">
+          <option value="1">--Choose tag--</option>
+          <option *ngFor="let tags of tags.value " value={{tags._id}}>{{tags.text}}</option>
+        </select>
+      </div>
+    </div> -->
+
+  </div>
+
+
+  <div class="form-group">
+    <label>*Content:</label>
+    <textarea class="form-control w-100" rows="4" [(ngModel)]="this.create_house.content"></textarea>
+  </div>
+
+  <!--  <div class="form-group">
+    <h3>Poza de copertă:</h3>
+    <label class="files-label w-100">
+      <img src="{{this.thumbnail.imageSrc}}" style="height: 220px;max-width: 500px" *ngIf="thumbnail">
+      <div class="files with-image " style="flex:1" [hidden]="thumbnail.imageSrc!==undefined">
+        <input type="file" multiple="false" (change)="setFile($event)" [(ngModel)]="thumbnail.inputModel"
+          accept="image/x-png,image/gif,image/jpeg">
+      </div>
+    </label>
+    <button class="btn btn-danger" (click)="setFile(null)" *ngIf="thumbnail.imageSrc">Sterge</button>
+  </div> -->
+
+  <div class="alert alert-danger" *ngIf="new_house.error">
+    {{new_house.error}}
+  </div>
+
+  <div class="alert alert-success" *ngIf="new_house.message">
+    {{new_house.message}}
+  </div>
+
+  <button class="btn btn-primary" (click)="postHouse()"> Create house
+  </button>
+
+
+
+
+
+
+
+</div>

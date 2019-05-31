@@ -1,0 +1,28 @@
+<div class="container">
+  <h1 style="margin:10px">{{house.value.title}}</h1>
+  <hr style="background:black">
+  <a style="box-shadow: 2px 3px 6px  rgba(0,0,0,0.16)" class="previous" routerLink="/dashboard/house-list">&laquo;
+    Back to house list</a>
+  <br>
+  <div class="card" style="margin-top:15px ;box-shadow: 2px 3px 6px  rgba(0,0,0,0.16);">
+
+
+    <div class="row ">
+      <div class="col" style="margin:15px">
+
+        <img class="poza" src="{{house.value.image}}" onerror="this.style.display='none'"
+          style="width:400px;height:auto">
+      </div>
+
+      <div class=" col" style="margin:15px">
+
+        <h3> Price: {{house.value.price}} $</h3>
+        <h3> Surface: {{house.value.surface}} m<sup>2</sup></h3>
+        <h3> Location: {{house.value.county}}, {{house.value.city}}</h3>
+        <h3> Description: {{house.value.content}}</h3>
+      </div>
+    </div>
+  </div>
+
+
+</div>

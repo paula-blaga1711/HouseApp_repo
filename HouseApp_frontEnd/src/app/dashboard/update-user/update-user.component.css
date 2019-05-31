@@ -1,0 +1,42 @@
+.previous {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+  }
+  
+  .previous:hover {
+    background:rgb(32, 192, 123);
+    color: white;
+  }
+  
+  .previous {
+    background-color: #f1f1f1;
+    color: black;
+  }
+
+  ::-webkit-input-placeholder {
+    font-style: italic;
+    font-size:14px;
+ }
+ :-moz-placeholder {
+    font-style: italic;  
+    font-size:14px;
+ }
+ ::-moz-placeholder {
+    font-style: italic; 
+    font-size:14px; 
+ }
+ :-ms-input-placeholder {  
+    font-style: italic; 
+    font-size:14px;
+ }
+
+ .btn-primary{
+   background:#343a40 ;
+   border:none;
+   float:right;
+}
+
+.btn-primary:hover{
+   background:rgb(32, 192, 123);
+}

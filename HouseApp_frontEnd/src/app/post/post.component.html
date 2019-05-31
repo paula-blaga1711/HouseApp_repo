@@ -1,0 +1,27 @@
+<div class="container">
+  <a style="box-shadow: 2px 3px 6px  rgba(0,0,0,0.16);margin-top:15px" class="previous" routerLink="/list">&laquo;
+    Back to list</a>
+  <br>
+  <div class="card" style="margin-top:15px ;box-shadow: 2px 3px 6px  rgba(0,0,0,0.16);">
+    <h1 style="margin:10px">{{houseId.value.title}}</h1>
+    <hr style="background:black">
+
+    <div class="row ">
+      <div class="col" style="margin:15px">
+
+        <img class="poza" src="{{getImageFromHouses(houseId)}}" onerror="this.style.display='none'"
+          style="width:400px;height:auto">
+      </div>
+
+      <div class=" col" style="margin:15px">
+
+        <h3> Price: {{houseId.value.price}} $</h3>
+        <h3> Surface: {{houseId.value.surface}} m<sup>2</sup></h3>
+        <h3> Location: {{houseId.value.county}}, {{house.value.city}}</h3>
+        <h3> Description: {{houseId.value.content}}</h3>
+      </div>
+    </div>
+  </div>
+
+
+</div>

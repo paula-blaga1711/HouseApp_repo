@@ -1,0 +1,63 @@
+.avatar{
+    margin-top:10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius:50%;
+    width:100px;
+    height:100px;
+}
+
+.name{
+   text-align:center;
+   margin-top:10px;
+}
+
+body{
+    background-image: url('./profile.jpg');
+    background-color:rgb(32, 192, 123);
+    background-size:cover;
+}
+
+button:hover{
+    background-color:rgb(32, 192, 123);
+}
+
+button{
+    background-color:rgb(32, 192, 123);
+    color:white;
+}
+
+mat-card{
+
+    position: absolute;
+    margin-top:4px;
+    top: 22%;
+    left: 37%;
+    background-color:#343a40;
+    min-width: 400px;
+    height:450px;
+   box-shadow: 3px 3px 3px #02020273;
+}
+
+
+#button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+h6 .h6{
+    color:white;
+
+}
+
+.ha{
+    color:grey;
+}
+
+.h5{
+    text-shadow: 2px 2px 0px rgba(147, 151, 150, 0.17);
+}

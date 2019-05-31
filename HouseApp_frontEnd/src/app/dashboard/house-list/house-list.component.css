@@ -1,0 +1,44 @@
+mat-card{
+      border:1px solid #999;
+
+  }
+  mat-card:hover{
+    border:2px solid;
+
+  }
+
+
+  p{
+      font-size:17px;
+      font-weight: 700;
+  }
+
+  .price{
+      font-size:19px;
+      margin-left:160px;
+  }
+
+  .poza{
+      background:#888;
+      min-width:200px;
+      min-height:200px;
+  }
+
+
+ .col-6{
+     margin-top:20px;
+ }
+
+ .btn-primary{
+    background:#343a40 ;
+    border:none;
+    margin-top:10px;
+ }
+
+ .btn-primary:hover{
+    background:rgb(32, 192, 123);
+ }
+
+ .btn{
+     margin:5px;
+ }

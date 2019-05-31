@@ -1,0 +1,55 @@
+
+.img{
+    background-image:url("poza2.jpg");
+    background-size:cover;
+    min-height:90vh;
+}
+h1{
+    color:white;
+    font-weight: bolder;
+    font-size:43px;
+}
+
+h4{
+    color:white;
+    margin-top:160px;
+}
+
+h5{
+    color:white;
+}
+
+p{
+    color:white;
+}
+
+.anunt{
+    margin-left:400px;
+    font-size:19px;
+}
+
+
+
+/*button{
+    top:50%;
+    left:50%;
+    transform: translate(50%,50%);
+}*/
+
+#button1{
+    border-radius:50%;
+    width:40px;
+    height:40px;
+
+}
+
+#button2{
+    
+    border-radius:50%;
+    width:40px;
+    height:40px;
+}
+
+
+
+

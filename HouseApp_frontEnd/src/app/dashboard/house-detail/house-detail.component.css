@@ -1,0 +1,15 @@
+.previous {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+  }
+  
+  .previous:hover {
+    background:rgb(32, 192, 123);
+    color: white;
+  }
+  
+  .previous {
+    background-color: #f1f1f1;
+    color: black;
+  }
