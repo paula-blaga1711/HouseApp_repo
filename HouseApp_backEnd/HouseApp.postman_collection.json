@@ -1,0 +1,770 @@
+{
+	"info": {
+		"_postman_id": "fcaefdb7-14b8-4e1d-8997-26730094338f",
+		"name": "HouseApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "settings",
+			"item": [
+				{
+					"name": "localhost:5000/settings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/settings",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:5000/settings/roles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/settings/roles",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"settings",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:5000/settings/roles/0",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/settings/roles/0",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"settings",
+								"roles",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:5000/settings/genders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/settings/genders",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"settings",
+								"genders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:5000/settings/genders/0",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/settings/genders/0",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"settings",
+								"genders",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:5000/settings/tags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/settings/tags",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"settings",
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:5000/settings/tags/0",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/settings/tags/0",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"settings",
+								"tags",
+								"0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "get all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IlFqTTFOelkwT1RRM09VUTJSVVkyUlRjMlFUQXpOVUU1UXpjek5rWTNPVEF5UlRRMk1UY3dPUSJ9.eyJuaWNrbmFtZSI6InBhdWxhLmJsYWdhIiwibmFtZSI6InBhdWxhLmJsYWdhQHByaW11cy10ZWNoLnJvIiwicGljdHVyZSI6Imh0dHBzOi8vcy5ncmF2YXRhci5jb20vYXZhdGFyL2RkNTJhMzU0M2Y0Y2VhOWIzMTVmOGQyMWIyMTgzMTg4P3M9NDgwJnI9cGcmZD1odHRwcyUzQSUyRiUyRmNkbi5hdXRoMC5jb20lMkZhdmF0YXJzJTJGcGEucG5nIiwidXBkYXRlZF9hdCI6IjIwMTktMDUtMTRUMTk6MDg6NDcuNjY2WiIsImVtYWlsIjoicGF1bGEuYmxhZ2FAcHJpbXVzLXRlY2gucm8iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9ob3VzZWFwcC5ldS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWNkYjA1Mjk3Yjk5M2MxMGYyOTMxZmY5IiwiYXVkIjoiTURqa1hSbkJMNEhKaVZ1bUg0MUlRbTJSdlRrQkk3algiLCJpYXQiOjE1NTc4NjA5MzQsImV4cCI6MTU1Nzg5NjkzNCwiYXRfaGFzaCI6ImJrT3doa2JhY0ZTRUlMTnVpRzZFN0EiLCJub25jZSI6ImxnLjFRUG1xaGI4azNWYjdZa1JOeWR3LUlkX1ZYaTFQIn0.MVODHnPB0YyisCHWOeNZvtuLZTeeYjrxCW7qWiKVqDemirF0Y0n_Hkf-eoPMuLVswqOYKmSFYa07eneDjulGVoFEPH1DfT8AkSeVpv3QpJptZHiG50cXLfvyEolWG2Mjmd1qYgLMIkk3flC5B5tKSBJIelfNjARs_Ft-6U0_EC-T1XZPpkOO6r0gHObCeXfsW8kZHYY080sKlpjDJ2PfWtMp6biqqabRNOjmU5rV43q3af8BnJSfC8Yobb5O2Rv94KENwRztySd9MLU1yAYTGblEcHJ30d7nblt0b48to-5RUqg2LqSuQH6g71fq3ttX1fBU7wZed6jsGgvfB7Xrow",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/users",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IlFqTTFOelkwT1RRM09VUTJSVVkyUlRjMlFUQXpOVUU1UXpjek5rWTNPVEF5UlRRMk1UY3dPUSJ9.eyJuaWNrbmFtZSI6InBhdWxhLmJsYWdhIiwibmFtZSI6InBhdWxhLmJsYWdhQHByaW11cy10ZWNoLnJvIiwicGljdHVyZSI6Imh0dHBzOi8vcy5ncmF2YXRhci5jb20vYXZhdGFyL2RkNTJhMzU0M2Y0Y2VhOWIzMTVmOGQyMWIyMTgzMTg4P3M9NDgwJnI9cGcmZD1odHRwcyUzQSUyRiUyRmNkbi5hdXRoMC5jb20lMkZhdmF0YXJzJTJGcGEucG5nIiwidXBkYXRlZF9hdCI6IjIwMTktMDUtMjhUMDc6MzM6NDguNDEyWiIsImVtYWlsIjoicGF1bGEuYmxhZ2FAcHJpbXVzLXRlY2gucm8iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9ob3VzZWFwcC5ldS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWNkYjA1Mjk3Yjk5M2MxMGYyOTMxZmY5IiwiYXVkIjoiTURqa1hSbkJMNEhKaVZ1bUg0MUlRbTJSdlRrQkk3algiLCJpYXQiOjE1NTkxNDM2NzcsImV4cCI6MTU1OTE3OTY3NywiYXRfaGFzaCI6InZUb3pudHpMeGhsamtxdGpOYnVaZ3ciLCJub25jZSI6In5GcHJsT280cy5CMmd3TmdzMlBHOUp6VUNlYy5ZRWcwIn0.XS6skFrM9txJ9NYCMXkQ7pqmMwwvbNbrjd360oaPplXLP7agpRf_pH5G7gtinuBHp_wGi8aOjDy80XCN3jtn1ETx83KE41ReK3uuWp8ehqkbhlBEAlRZts2qIPdIQwafbSEOwM2eXk3gFy2guQjEWv5qugQvF_UjkTNpkUOfsoi1wscj3W4QmxgJAeDOuWlkuehegaZJ941FvTYRKRf7OIlRuc4WOmkoYT5b74SdyrindeSzEgPN4k-H_QRpRWzIVrMP7bdJeZVx5zOwblIula3ZeUDRd_7H_dPRfFGbyafEGJRKwqxV4fdIHI1ZZcSKnxJ5S6iz1J4ycW0sc8wTZA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/users/5cdb0678e9899049445489ab",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"5cdb0678e9899049445489ab"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get myself",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IlFqTTFOelkwT1RRM09VUTJSVVkyUlRjMlFUQXpOVUU1UXpjek5rWTNPVEF5UlRRMk1UY3dPUSJ9.eyJuaWNrbmFtZSI6InJlZ3VsYXIxIiwibmFtZSI6InJlZ3VsYXIxQGtleS1tYWlsLm5ldCIsInBpY3R1cmUiOiJodHRwczovL3MuZ3JhdmF0YXIuY29tL2F2YXRhci9iMmUzYTE0MjNiMzcyODBhZDU2MWUwYzNmZjM0ZTBkMT9zPTQ4MCZyPXBnJmQ9aHR0cHMlM0ElMkYlMkZjZG4uYXV0aDAuY29tJTJGYXZhdGFycyUyRnJlLnBuZyIsInVwZGF0ZWRfYXQiOiIyMDE5LTA1LTE0VDIwOjQ5OjIwLjg1NFoiLCJlbWFpbCI6InJlZ3VsYXIxQGtleS1tYWlsLm5ldCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJpc3MiOiJodHRwczovL2hvdXNlYXBwLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1Y2RiMGMwMDdiOTkzYzEwZjI5MzIwNzAiLCJhdWQiOiJNRGprWFJuQkw0SEppVnVtSDQxSVFtMlJ2VGtCSTdqWCIsImlhdCI6MTU1Nzg2Njk2MiwiZXhwIjoxNTU3OTAyOTYyLCJhdF9oYXNoIjoiSy1yZ2tSTnUtQWpsLW5WalgzN1dfdyIsIm5vbmNlIjoiQUJJVWZVVEFhUDRBRUFocXltSkRZNkJOUkhtRDcyT1oifQ.kZp0ELGZfMXI15iL580uizM3bz-B6UGveuj8r-fg-ex0fpwyTjO0GBqY0BjEb8cKpyan5K2l2gW9o4rK3DoWydMSGX26-ZMGVkYSyR0S__bFzyYI3z7MocgQEaWqBSEdGCDnCZD3rKPDPAzLsS5hFFaUoevtFrFvxEgynz8wg-xRMFhaKzN1XH-yyGYXCyoP2v8K0mBL3xg57Gr-GfG5ZoSIrpUzAGcmM8O1Lpu6zN7zIi7eMRSqRA3CRK2s3w-kRObGwiLw9-Bb0E-jBRkcAt1VdyWJ8PxRgikMpPJPbMSdPGm-ox7YOJH5fmsll_ixn9xRGi8SLVmiWcUr5jcCng",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/users/myself",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"myself"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "soft delete user by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IlFqTTFOelkwT1RRM09VUTJSVVkyUlRjMlFUQXpOVUU1UXpjek5rWTNPVEF5UlRRMk1UY3dPUSJ9.eyJuaWNrbmFtZSI6InBhdWxhLmJsYWdhIiwibmFtZSI6InBhdWxhLmJsYWdhQHByaW11cy10ZWNoLnJvIiwicGljdHVyZSI6Imh0dHBzOi8vcy5ncmF2YXRhci5jb20vYXZhdGFyL2RkNTJhMzU0M2Y0Y2VhOWIzMTVmOGQyMWIyMTgzMTg4P3M9NDgwJnI9cGcmZD1odHRwcyUzQSUyRiUyRmNkbi5hdXRoMC5jb20lMkZhdmF0YXJzJTJGcGEucG5nIiwidXBkYXRlZF9hdCI6IjIwMTktMDUtMjhUMDc6MzM6NDguNDEyWiIsImVtYWlsIjoicGF1bGEuYmxhZ2FAcHJpbXVzLXRlY2gucm8iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9ob3VzZWFwcC5ldS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWNkYjA1Mjk3Yjk5M2MxMGYyOTMxZmY5IiwiYXVkIjoiTURqa1hSbkJMNEhKaVZ1bUg0MUlRbTJSdlRrQkk3algiLCJpYXQiOjE1NTkxNDM2NzcsImV4cCI6MTU1OTE3OTY3NywiYXRfaGFzaCI6InZUb3pudHpMeGhsamtxdGpOYnVaZ3ciLCJub25jZSI6In5GcHJsT280cy5CMmd3TmdzMlBHOUp6VUNlYy5ZRWcwIn0.XS6skFrM9txJ9NYCMXkQ7pqmMwwvbNbrjd360oaPplXLP7agpRf_pH5G7gtinuBHp_wGi8aOjDy80XCN3jtn1ETx83KE41ReK3uuWp8ehqkbhlBEAlRZts2qIPdIQwafbSEOwM2eXk3gFy2guQjEWv5qugQvF_UjkTNpkUOfsoi1wscj3W4QmxgJAeDOuWlkuehegaZJ941FvTYRKRf7OIlRuc4WOmkoYT5b74SdyrindeSzEgPN4k-H_QRpRWzIVrMP7bdJeZVx5zOwblIula3ZeUDRd_7H_dPRfFGbyafEGJRKwqxV4fdIHI1ZZcSKnxJ5S6iz1J4ycW0sc8wTZA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/users/delete/5ceea4bde826a948102afaae",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"delete",
+								"5ceea4bde826a948102afaae"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create regular user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Jane Done",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "altele",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "createtest01@safe-planet.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/users",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tags",
+			"item": [
+				{
+					"name": "get all tags",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/tags",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get tag by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/tags/5ce59d10444f4415c4efdd50",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"tags",
+								"5ce59d10444f4415c4efdd50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create tag",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IlFqTTFOelkwT1RRM09VUTJSVVkyUlRjMlFUQXpOVUU1UXpjek5rWTNPVEF5UlRRMk1UY3dPUSJ9.eyJuaWNrbmFtZSI6InBhdWxhLmJsYWdhIiwibmFtZSI6InBhdWxhLmJsYWdhQHByaW11cy10ZWNoLnJvIiwicGljdHVyZSI6Imh0dHBzOi8vcy5ncmF2YXRhci5jb20vYXZhdGFyL2RkNTJhMzU0M2Y0Y2VhOWIzMTVmOGQyMWIyMTgzMTg4P3M9NDgwJnI9cGcmZD1odHRwcyUzQSUyRiUyRmNkbi5hdXRoMC5jb20lMkZhdmF0YXJzJTJGcGEucG5nIiwidXBkYXRlZF9hdCI6IjIwMTktMDUtMjJUMTc6MDM6MTguODYxWiIsImVtYWlsIjoicGF1bGEuYmxhZ2FAcHJpbXVzLXRlY2gucm8iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9ob3VzZWFwcC5ldS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWNkYjA1Mjk3Yjk5M2MxMGYyOTMxZmY5IiwiYXVkIjoiTURqa1hSbkJMNEhKaVZ1bUg0MUlRbTJSdlRrQkk3algiLCJpYXQiOjE1NTg1NDQ1OTgsImV4cCI6MTU1ODU4MDU5OCwiYXRfaGFzaCI6IjlsWU82eFIxMFlXNkN5YndzeWZPaWciLCJub25jZSI6InBpeTE1Z29YS2dDejlhTWFid2d5LjFRem1kOXVUT35lIn0.i28NXrmpIPU1YacT_YMNIaAIPvUE4S48TPfqYu-mWNd-wcHnE019JfQjpZVPo4RwyL5fdzM0mPBaVhLut2CrYFggMtSiPn61vCphaRd7WEzd_XydVBWPD-n9jpMKa8KOVA0leV9TF2DBWUDJHkY04JLqaHbBIdz_U48AK1hjh0PktivT1LQdGwH4x_xx4MDXPk0oku-klAblF65sMi1tgS-tPehuf_hql4PJXU7yEQtmfupXJxAeWu23DXXW8D4AGAn9OkjRgHwtQyYGB4GOzK2HE1qWoXEH7a5_ISradCWUhLb4_A0u1HPVqy88EA0NueVeoZ-rZiI0Iu_iH2bDQA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "text",
+									"value": "semidecomandat",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/tags",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update tag by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IlFqTTFOelkwT1RRM09VUTJSVVkyUlRjMlFUQXpOVUU1UXpjek5rWTNPVEF5UlRRMk1UY3dPUSJ9.eyJuaWNrbmFtZSI6InBhdWxhLmJsYWdhIiwibmFtZSI6InBhdWxhLmJsYWdhQHByaW11cy10ZWNoLnJvIiwicGljdHVyZSI6Imh0dHBzOi8vcy5ncmF2YXRhci5jb20vYXZhdGFyL2RkNTJhMzU0M2Y0Y2VhOWIzMTVmOGQyMWIyMTgzMTg4P3M9NDgwJnI9cGcmZD1odHRwcyUzQSUyRiUyRmNkbi5hdXRoMC5jb20lMkZhdmF0YXJzJTJGcGEucG5nIiwidXBkYXRlZF9hdCI6IjIwMTktMDUtMjhUMDc6MzM6NDguNDEyWiIsImVtYWlsIjoicGF1bGEuYmxhZ2FAcHJpbXVzLXRlY2gucm8iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9ob3VzZWFwcC5ldS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWNkYjA1Mjk3Yjk5M2MxMGYyOTMxZmY5IiwiYXVkIjoiTURqa1hSbkJMNEhKaVZ1bUg0MUlRbTJSdlRrQkk3algiLCJpYXQiOjE1NTkwMjg4MjgsImV4cCI6MTU1OTA2NDgyOCwiYXRfaGFzaCI6IlhydFJjLWZsc09ZbFY3QmFOcGxYZ2ciLCJub25jZSI6IlFmb3BLMXVqLk9UUVR1Z2UzSFFCZ0lDMWFYSms3ZUtHIn0.EiFnBwiDyBBa0iyhxngLlwe3_7dnpjgRHHoLZWWmepNLO1Gd9Co99ZpeoP2XWSBnJb4FPO83edwRxU5DYqQWjvjNWMnMAOm24zRjjkmJJw3Qcv9VzSeHVb2Qs_Kw05u-qOoHXqGUikq0XQnzMxQUFJD7tqmWUYTLxUmPtEY0nlhuF16ziKq6BKaMB-ViMpXen8OB8vaI5PQ-BDRLZmBg5y-6FV0GX7ddNBOzYF9odHdPCrc7yejUHuHni5kSIUBpq32dVNg1Ue53-XiG4KjRJF8Jgjgr6CuvwLS6MpzaMFdZEvKyh5B2kykK2Jye15MH8aMR43BsaxrDOfy0m5uOWg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "text",
+									"value": "ultracentral",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/tags/5ce59d10444f4415c4efdd50",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"tags",
+								"5ce59d10444f4415c4efdd50"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "houses",
+			"item": [
+				{
+					"name": "get all houses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/houses",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"houses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get house by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/houses/5cebf8c5036c3d25d8181d4d",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"houses",
+								"5cebf8c5036c3d25d8181d4d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get filtered houses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/houses?county=Bihor&text=finisat",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"houses"
+							],
+							"query": [
+								{
+									"key": "tagIDs[1]",
+									"value": "5ce584195e957c363c866d2d",
+									"disabled": true
+								},
+								{
+									"key": "tagIDs[0]",
+									"value": "5ce584215e957c363c866d2e",
+									"disabled": true
+								},
+								{
+									"key": "prices[0]",
+									"value": "50000",
+									"disabled": true
+								},
+								{
+									"key": "prices[1]",
+									"value": "60000",
+									"disabled": true
+								},
+								{
+									"key": "county",
+									"value": "Bihor"
+								},
+								{
+									"key": "text",
+									"value": "finisat"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete house by id (admin or owner)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IlFqTTFOelkwT1RRM09VUTJSVVkyUlRjMlFUQXpOVUU1UXpjek5rWTNPVEF5UlRRMk1UY3dPUSJ9.eyJuaWNrbmFtZSI6InBhdWxhLmJsYWdhIiwibmFtZSI6InBhdWxhLmJsYWdhQHByaW11cy10ZWNoLnJvIiwicGljdHVyZSI6Imh0dHBzOi8vcy5ncmF2YXRhci5jb20vYXZhdGFyL2RkNTJhMzU0M2Y0Y2VhOWIzMTVmOGQyMWIyMTgzMTg4P3M9NDgwJnI9cGcmZD1odHRwcyUzQSUyRiUyRmNkbi5hdXRoMC5jb20lMkZhdmF0YXJzJTJGcGEucG5nIiwidXBkYXRlZF9hdCI6IjIwMTktMDUtMjhUMDc6MzM6NDguNDEyWiIsImVtYWlsIjoicGF1bGEuYmxhZ2FAcHJpbXVzLXRlY2gucm8iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9ob3VzZWFwcC5ldS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWNkYjA1Mjk3Yjk5M2MxMGYyOTMxZmY5IiwiYXVkIjoiTURqa1hSbkJMNEhKaVZ1bUg0MUlRbTJSdlRrQkk3algiLCJpYXQiOjE1NTkwNzM3OTUsImV4cCI6MTU1OTEwOTc5NSwiYXRfaGFzaCI6Ikc5cXEzMnB4bXdqcHcyNXUwRXJrSlEiLCJub25jZSI6InRMdH5BNFpiLUVYck9VeDM4fmg1WlBCblh1SkE3YUZqIn0.uOi25lQc_Bjw30A5MhNVs14jHysO347PiLO1Mo2RjQeBCbIRgD7Lx0ID9nOsXLWSCur_R_UW285jGmhHXas9uqeIvK6dVZD6bjLeOi0wcB5b7FofsY5rx7_RCuBrcS4p4kuVkWYPZCVXJVbEcH6VFlW4vCvjtEk3uvPivHARcuUH2an-wNQ5q81TAM6aRmGtM2AatMVhC1k_-85w5OuojkrGbG-M669O73OE9EEn6QC39n9woDUaKa9liua-WPFrgFgDpBGLwjn8WSs5ZZQWIU977Z8DGFVxGS128ZcWlTle3lUkcDp5fNyBqpsqnI7gwjWJdBe1gdqSnclimoVMQg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/houses/5ced97b5ae962b119cf65173",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"houses",
+								"5ced97b5ae962b119cf65173"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create house",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IlFqTTFOelkwT1RRM09VUTJSVVkyUlRjMlFUQXpOVUU1UXpjek5rWTNPVEF5UlRRMk1UY3dPUSJ9.eyJuaWNrbmFtZSI6InBhdWxhLmJsYWdhIiwibmFtZSI6InBhdWxhLmJsYWdhQHByaW11cy10ZWNoLnJvIiwicGljdHVyZSI6Imh0dHBzOi8vcy5ncmF2YXRhci5jb20vYXZhdGFyL2RkNTJhMzU0M2Y0Y2VhOWIzMTVmOGQyMWIyMTgzMTg4P3M9NDgwJnI9cGcmZD1odHRwcyUzQSUyRiUyRmNkbi5hdXRoMC5jb20lMkZhdmF0YXJzJTJGcGEucG5nIiwidXBkYXRlZF9hdCI6IjIwMTktMDUtMjhUMDc6MzM6NDguNDEyWiIsImVtYWlsIjoicGF1bGEuYmxhZ2FAcHJpbXVzLXRlY2gucm8iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9ob3VzZWFwcC5ldS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWNkYjA1Mjk3Yjk5M2MxMGYyOTMxZmY5IiwiYXVkIjoiTURqa1hSbkJMNEhKaVZ1bUg0MUlRbTJSdlRrQkk3algiLCJpYXQiOjE1NTkwNzM3OTUsImV4cCI6MTU1OTEwOTc5NSwiYXRfaGFzaCI6Ikc5cXEzMnB4bXdqcHcyNXUwRXJrSlEiLCJub25jZSI6InRMdH5BNFpiLUVYck9VeDM4fmg1WlBCblh1SkE3YUZqIn0.uOi25lQc_Bjw30A5MhNVs14jHysO347PiLO1Mo2RjQeBCbIRgD7Lx0ID9nOsXLWSCur_R_UW285jGmhHXas9uqeIvK6dVZD6bjLeOi0wcB5b7FofsY5rx7_RCuBrcS4p4kuVkWYPZCVXJVbEcH6VFlW4vCvjtEk3uvPivHARcuUH2an-wNQ5q81TAM6aRmGtM2AatMVhC1k_-85w5OuojkrGbG-M669O73OE9EEn6QC39n9woDUaKa9liua-WPFrgFgDpBGLwjn8WSs5ZZQWIU977Z8DGFVxGS128ZcWlTle3lUkcDp5fNyBqpsqnI7gwjWJdBe1gdqSnclimoVMQg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "new House",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "the add itself",
+									"type": "text"
+								},
+								{
+									"key": "surface",
+									"value": "45",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "53000",
+									"type": "text"
+								},
+								{
+									"key": "county",
+									"value": "Bihor",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Oradea",
+									"type": "text"
+								},
+								{
+									"key": "oldTags[0]",
+									"value": "5ce583d9d2a2a7363cddec24",
+									"type": "text"
+								},
+								{
+									"key": "oldTags[1]",
+									"value": "5ce59cae4e5fbe3dc89077dc",
+									"type": "text"
+								},
+								{
+									"key": "newTags[0]",
+									"value": "new tag2",
+									"type": "text"
+								},
+								{
+									"key": "houseimg",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "newTags[1]",
+									"value": "new tag3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/houses",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"houses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update house by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IlFqTTFOelkwT1RRM09VUTJSVVkyUlRjMlFUQXpOVUU1UXpjek5rWTNPVEF5UlRRMk1UY3dPUSJ9.eyJuaWNrbmFtZSI6InBhdWxhLmJsYWdhIiwibmFtZSI6InBhdWxhLmJsYWdhQHByaW11cy10ZWNoLnJvIiwicGljdHVyZSI6Imh0dHBzOi8vcy5ncmF2YXRhci5jb20vYXZhdGFyL2RkNTJhMzU0M2Y0Y2VhOWIzMTVmOGQyMWIyMTgzMTg4P3M9NDgwJnI9cGcmZD1odHRwcyUzQSUyRiUyRmNkbi5hdXRoMC5jb20lMkZhdmF0YXJzJTJGcGEucG5nIiwidXBkYXRlZF9hdCI6IjIwMTktMDUtMjhUMDc6MzM6NDguNDEyWiIsImVtYWlsIjoicGF1bGEuYmxhZ2FAcHJpbXVzLXRlY2gucm8iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6Ly9ob3VzZWFwcC5ldS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWNkYjA1Mjk3Yjk5M2MxMGYyOTMxZmY5IiwiYXVkIjoiTURqa1hSbkJMNEhKaVZ1bUg0MUlRbTJSdlRrQkk3algiLCJpYXQiOjE1NTkwNzM3OTUsImV4cCI6MTU1OTEwOTc5NSwiYXRfaGFzaCI6Ikc5cXEzMnB4bXdqcHcyNXUwRXJrSlEiLCJub25jZSI6InRMdH5BNFpiLUVYck9VeDM4fmg1WlBCblh1SkE3YUZqIn0.uOi25lQc_Bjw30A5MhNVs14jHysO347PiLO1Mo2RjQeBCbIRgD7Lx0ID9nOsXLWSCur_R_UW285jGmhHXas9uqeIvK6dVZD6bjLeOi0wcB5b7FofsY5rx7_RCuBrcS4p4kuVkWYPZCVXJVbEcH6VFlW4vCvjtEk3uvPivHARcuUH2an-wNQ5q81TAM6aRmGtM2AatMVhC1k_-85w5OuojkrGbG-M669O73OE9EEn6QC39n9woDUaKa9liua-WPFrgFgDpBGLwjn8WSs5ZZQWIU977Z8DGFVxGS128ZcWlTle3lUkcDp5fNyBqpsqnI7gwjWJdBe1gdqSnclimoVMQg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "updated House",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "the add itself UPDATED",
+									"type": "text"
+								},
+								{
+									"key": "surface",
+									"value": "145",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "153000",
+									"type": "text"
+								},
+								{
+									"key": "county",
+									"value": "Timis",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Timisoara",
+									"type": "text"
+								},
+								{
+									"key": "oldTags[0]",
+									"value": "5ce583d9d2a2a7363cddec24",
+									"type": "text"
+								},
+								{
+									"key": "oldTags[1]",
+									"value": "5ce59cae4e5fbe3dc89077dc",
+									"type": "text"
+								},
+								{
+									"key": "newTags[0]",
+									"value": "new tag update",
+									"type": "text"
+								},
+								{
+									"key": "houseimg",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "newTags[1]",
+									"value": "update 3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/houses/5cedb5a692ce1c3d70b0fe73",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"houses",
+								"5cedb5a692ce1c3d70b0fe73"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "localhost:5000",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000",
+					"host": [
+						"localhost"
+					],
+					"port": "5000"
+				}
+			},
+			"response": []
+		}
+	]
+}
